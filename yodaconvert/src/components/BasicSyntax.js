@@ -16,6 +16,8 @@ class BasicSyntax extends Component {
       this.setState({
         basicSyntax: data.basic_syntax
     }))
+
+    
   }
 
   render() {
