@@ -23,14 +23,13 @@ class BasicSyntax extends Component {
     return (
       <div>
         {this.state.basicSyntax.map(res =>{
-          return <div >
-            <ul>
-              <li>Nom: {res.name}</li>
-              <li>Description: {res.description}</li>
-              <li>{res.examples[0].markdown}</li>
-              <li>html: {res.examples[0].html}</li>
+          return <div className='modal-syntax'>
+            
+              <div>{res.name}</div>
+              <div>{res.examples[0].markdown}</div>
+              <div> {res.examples[0].html}</div>
 
-        </ul>
+        
             </div>})}
 
 
