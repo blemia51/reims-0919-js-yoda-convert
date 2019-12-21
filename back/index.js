@@ -18,18 +18,19 @@ axios.get('https://www.markdownguide.org/api/v1/basic-syntax.json').then(resp =>
 });
 
 axios.get('https://www.markdownguide.org/api/v1/cheat-sheet.json').then(resp => {
-  helpSyntax = resp.data
+	helpSyntax = resp.data
+	console.log(resp.data);
 })
 
 app.get ('/api/basicSyntax',(req, res) => {
     res.json(basicSyntax)
-    console.log(res.json(basicSyntax))
+   // console.log(res.json(basicSyntax))
   }
  );
 
  app.get ('/api/helpSyntax',(req, res) => {
 	res.json(helpSyntax)
-	console.log(res.json(helpSyntax))
+	//console.log(res.json(helpSyntax))
 }
 );
 

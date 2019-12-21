@@ -1,4 +1,4 @@
-* {
+body {
 background-color: #31354f;
 }
 
@@ -65,7 +65,7 @@ background-color: #31354f;
 .textContainer {
   display: flex;
   justify-content: center;
-  width: 80%; 
+  width: 80vw; 
   text-align: center;
   margin: auto;
 }
@@ -85,6 +85,29 @@ background-color: #31354f;
   background-color: black;
   color: white;
 }
+.html-editor {
+  margin-top: 50px; 
+  color: white;
+  width: 100%;
+  height: 463px;
+  background: black;
+  border: solid 1px white;
+}
+
+
+.textEditors {
+  font-size: 25px;
+  width: 100%;
+  height: 90%;
+  background-color: black;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 /*******************Button debut*************************************/
 
 .aeraButtons{
@@ -97,7 +120,7 @@ background-color: #31354f;
   align-items: center;
   margin-bottom: 1rem;
 }
-.aeraButtons button{
+.button{
   min-width: 10vw;
   padding: .5rem 1rem;
   background: #12114099;
@@ -105,22 +128,10 @@ background-color: #31354f;
   color: #9d9d8a;
 
 }
-
-/* Feuille de style intégrée #2 | http://localhost:3000/main */
-
-.aeraButtons {
-  /* border-radius: 5px; */
-  /* border: 3px solid rgb(165, 172, 209); */
-  /* background-color: rgb(165, 178, 212); */
-  /* margin-bottom: 1rem; */
-}
-
-.aeraButtons button {
-  /* border-radius: 10px; */
-  /* box-shadow: 10px 5px 5px rgb(44, 6, 182); */
-  background: #12114099;
-  border: none;
-  color: #9d9d8a;
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -134,8 +145,6 @@ background-color: #31354f;
 .AsideBarre{
   width: 15%;
   height: 100%;
-  
-  
 }
 .textContainer{
   width: 70%;
@@ -276,8 +285,15 @@ modal-wrapper {
   grid-template-columns: 20% 40% 40%;
 }
 
-
-
-.modal-syntax div {
+.modal-syntax div, .help-syntax div{
   padding: 10px;
+}
+.help-syntax {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+mark {
+  background-color: yellow !important;
+  color: black;
 }

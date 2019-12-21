@@ -5,7 +5,6 @@ class ButtonConvDel extends Component {
   render(){
     return (
       <div className='aeraButtons'>
-        <button onClick = {this.props.convert}>Convertir</button>
         <button onClick = {this.props.delet}>Reset</button>
       </div>
     );
