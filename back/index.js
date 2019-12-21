@@ -12,18 +12,26 @@ app.get('/', (req, res) => {
 });
 
 axios.get('https://www.markdownguide.org/api/v1/basic-syntax.json').then(resp => {
-    basicSyntax = resp.data
-    //console.log(basicSyntax)
-    //console.log(resp.data);
+  basicSyntax = resp.data
+  //console.log(basicSyntax)
+  //console.log(resp.data);
 });
 
+axios.get('https://www.markdownguide.org/api/v1/cheat-sheet.json').then(resp => {
+  helpSyntax = resp.data
+})
+
 app.get ('/api/basicSyntax',(req, res) => {
-  
     res.json(basicSyntax)
     console.log(res.json(basicSyntax))
   }
- 
  );
+
+ app.get ('/api/helpSyntax',(req, res) => {
+	res.json(helpSyntax)
+	console.log(res.json(helpSyntax))
+}
+);
 
 app.listen(port, (err) => {
   if (err) {

@@ -4,7 +4,6 @@ import WelcomePage from './components/WelcomePage';
 import { Route, Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom"; 
 import MainPage from './components/MainPage';
-import Modal from './components/Modal'
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
           
         </BrowserRouter> 
 
-        <Modal />
+        
 
     </div>
   );
