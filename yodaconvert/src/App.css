@@ -88,6 +88,7 @@ background-color: #31354f;
   color: white;
 }
 .html-editor {
+  text-align: left;
   margin-top: 50px; 
   color: white;
   width: 42%;
@@ -278,12 +279,13 @@ modal-wrapper {
 }
 
 .open-modal-btn {
-    margin: 15px;
-    padding: 10px;
+    margin: 8px;
+    padding: 6px;
     color: #9d9d8a;
     cursor: pointer;
     background-color: #12114099;
     border: none;
+    min-width: 80px;
 
 }
 /*CSS MODAL CONTENT */
