@@ -7,7 +7,7 @@ const md = require('markdown-it')({
   html: true,
   //linkify: true,
 	//typographer: true,
-	breaks: true,
+	breaks: false,
 	highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
