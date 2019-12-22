@@ -10,10 +10,10 @@ function Nav(props) {
       </div>
       <div className='search-field'>
         <input onChange={props.searchField} value={props.input} id='searchField' type ='text' placeholder ='Search a word'></input>
-        <img src='search-svg.svg' className='search-button' alt='button_search' />
+        
       </div>
       <div>
-        <p>Nb occurrence : {props.onSearch()}</p>
+        <p style={{color:'yellow'}}>Key words : {props.onSearch()}</p>
       </div>
     </div>
   );
