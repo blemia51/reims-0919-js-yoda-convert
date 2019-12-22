@@ -5,20 +5,10 @@ import Modal from './Modal'
 import ModalHelp from './ModalHelp'
 import Highlighter from 'react-highlight-words';
 import { save } from 'save-file';
+import parse from 'html-react-parser';
 const md = require('markdown-it')({
   html: true,
-  //linkify: true,
-	//typographer: true,
 	breaks: false,
-	highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (__) {}
-    }
-
-    return ''; // use external default escaping
-  }
 })//npm install markdown-it --save
 var hljs = require('highlight.js') //npm install highlight.js
 
@@ -32,7 +22,9 @@ class Converter extends Component {
             counter: 0,
 						isShowing: false,
 						isShowingHelp: false,
-						input: ''
+            input: '',
+            isPreviewSelected :false,
+            previewButton:'Preview'
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -40,14 +32,23 @@ class Converter extends Component {
 
   handleInputChange(e) {
     const newText = e.target.value
-		const htmlTexte = md.render(e.target.value)
+    const htmlText = md.render(e.target.value)
+    const preview = parse(htmlText)
 		this.countWords()
 		//this.hilight()
     this.setState({ 
       inputText: newText,
-			outputText: htmlTexte,
-			
+			outputText: htmlText,
+			render: preview
     })
+  }
+
+  handlePreviewChange = () => {
+    this.setState({
+      isPreviewSelected: !this.state.isPreviewSelected,
+      previewButton: (this.state.isPreviewSelected?'Preview':'Html')
+    })
+    
   }
 
   openModalHandler = () => {
@@ -76,11 +77,6 @@ class Converter extends Component {
 	});
 }
 
-  highlightedCode(e) {
-    return hljs.highlightAuto(e).value
-   
-
-  }
   hilight() {
 	  const term='test'// search query we want to highlight in results 
     const results= this.state.outputText // search results
@@ -129,9 +125,8 @@ class Converter extends Component {
 
   render () {
     return (
-    
-      <div className='main'>
 
+      <div className='main'>
         <header className="navbar">
           <Nav
             onSearch={this.onSearch}
@@ -145,22 +140,24 @@ class Converter extends Component {
           </textarea>
       
           <div className='html-editor'>
+            {this.state.isPreviewSelected?<div>{this.state.render} </div>:
 				  	<Highlighter 
-					  highlightClassName='textEditors'
-						highlightStyle={{color:'red',fontSize:'16px'}}
+					  highlightClassName='textEditors'styled-components
+						highlightStyle={{color:'red',fontSize:'12px'}}
             autoEscape={true}
             searchWords={[this.state.input]}
             textToHighlight={this.state.outputText}
-            />
+            />}
 				  </div>
 			  </div>
 
 				<div className='button-container'>
-				  <p>mots: {this.state.counter}</p>
+				  <p style={{color:'yellow'}}>words: {this.state.counter}</p>
 				  <button className="open-modal-btn" onClick={this.openModalHandler}>MarkDown Tips</button>
           <button className="open-modal-btn" onClick={this.openModalHandlerHelp}>MarkDown Help</button>
-				  <button className='open-modal-btn' onClick={this.handleInputChange}>Reset</button>
+          <button className='open-modal-btn' onClick={this.handlePreviewChange}>{this.state.previewButton}</button>
           <button onClick={this.fileExport} className="open-modal-btn">Save</button>
+          <button className='open-modal-btn' onClick={this.handleInputChange}>Reset</button>
 				</div> 
 					 
         <div>
