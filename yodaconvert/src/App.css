@@ -297,3 +297,22 @@ mark {
   background-color: yellow !important;
   color: black;
 }
+/*****************CSS NAV*******************/
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-button {
+  height: 7vh;
+  width: 4vw;
+  cursor: pointer;
+  color: white;
+}
