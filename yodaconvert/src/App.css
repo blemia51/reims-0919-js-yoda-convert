@@ -68,6 +68,7 @@ background-color: #31354f;
   width: 80vw; 
   text-align: center;
   margin: auto;
+  margin-top: 10px;
 }
 
 .input-text {
@@ -81,17 +82,24 @@ background-color: #31354f;
 
 
 .output-text {
- margin-top: 50px; 
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px; 
   background-color: black;
   color: white;
 }
 .html-editor {
+  text-align: left;
   margin-top: 50px; 
   color: white;
-  width: 100%;
+  width: 42%;
   height: 463px;
   background: black;
   border: solid 1px white;
+  word-wrap: break-word ;
+  overflow: auto;
+  font-family: "DejaVu Sans Mono";
+  font-size: 12px;
 }
 
 
@@ -105,6 +113,7 @@ background-color: #31354f;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 
@@ -243,7 +252,7 @@ modal-wrapper {
 }
 
 .btn-cancel, .btn-continue {
-    background: coral;
+    background-color: none;
     border: none;
     color: white;
     cursor: pointer;
@@ -253,7 +262,7 @@ modal-wrapper {
 }
 
 .btn-cancel {
-    background-color: #b71c1c;
+    background-color: none;
     float: left;
 }
 
@@ -271,12 +280,13 @@ modal-wrapper {
 }
 
 .open-modal-btn {
-    margin: 15px;
-    padding: 10px;
+    margin: 8px;
+    padding: 6px;
     color: #9d9d8a;
     cursor: pointer;
     background-color: #12114099;
     border: none;
+    min-width: 80px;
 
 }
 /*CSS MODAL CONTENT */
@@ -296,4 +306,31 @@ modal-wrapper {
 mark {
   background-color: yellow !important;
   color: black;
+}
+/*****************CSS NAV*******************/
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: row;
+}
+
+#searchField {
+  text-align: center;
+}
+
+#searchField:focus {
+  text-align: left;
+}
+
+.search-button {
+  height: 7vh;
+  width: 4vw;
+  cursor: pointer;
+  color: white;
 }
