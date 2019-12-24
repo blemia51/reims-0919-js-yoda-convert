@@ -132,11 +132,12 @@ class Converter extends Component {
             onSearch={this.onSearch}
             searchField={this.searchField}
             input={this.state.input}
+            counter={this.state.counter}
           />
         </header>
 
         <div className="textContainer"> 
-          <textarea className="input-text" name="inputText" rows="30" cols="50" r esize='none' value={this.state.inputText} onChange={this.handleInputChange}>    
+          <textarea className="input-text" name="inputText" rows="30" cols="50" resize='none' value={this.state.inputText} onChange={this.handleInputChange}>    
           </textarea>
       
           <div className='html-editor'>
@@ -152,7 +153,6 @@ class Converter extends Component {
 			  </div>
 
 				<div className='button-container'>
-				  <p style={{color:'yellow'}}>words: {this.state.counter}</p>
 				  <button className="open-modal-btn" onClick={this.openModalHandler}>MarkDown Tips</button>
           <button className="open-modal-btn" onClick={this.openModalHandlerHelp}>MarkDown Help</button>
           <button className='open-modal-btn' onClick={this.handlePreviewChange}>{this.state.previewButton}</button>
