@@ -12,7 +12,7 @@ function Nav(props) {
     </div>
     <div style={{display:'flex',alignItems:'center'}}>
     <div className='search-field'>
-      <input onChange={props.searchField} value={props.input} id='searchField' type ='text' placeholder ='Search a word'></input>
+      <input onChange={props.searchField} value={props.input} id='searchField' type ='text' placeholder ='Search Key word'></input>
     </div>
     <div>
   <p style={{color:'yellow',paddingLeft:'15px'}}>Key words : {props.onSearch()}<span style={{paddingLeft:'15px'}}>  Words : {props.counter}</span></p>
