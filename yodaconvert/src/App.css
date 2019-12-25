@@ -68,7 +68,6 @@ background-color: #31354f;
   width: 80vw; 
   text-align: center;
   margin: auto;
-  margin-top: 10px;
 }
 
 .input-text {
@@ -313,6 +312,7 @@ mark {
   justify-content: space-around;
   align-items: center;
   height: 10vh;
+
 }
 
 .search-field {

@@ -97,7 +97,7 @@ class Converter extends Component {
     }
   
   searchField = event => {
-    this.setState({ input: event.target.value });
+    this.setState({ input: event.target.value })
   }
 
   onSearch = () => {
@@ -126,7 +126,7 @@ class Converter extends Component {
   render () {
     return (
 
-      <div className='main'>
+      <div className='main' style={{marginTop:'30px'}}>
         <header className="navbar">
           <Nav
             onSearch={this.onSearch}
@@ -141,7 +141,8 @@ class Converter extends Component {
           </textarea>
       
           <div className='html-editor'>
-            {this.state.isPreviewSelected?<div>{this.state.render} </div>:
+            {this.state.isPreviewSelected?
+            <div>{this.state.render}</div>:
 				  	<Highlighter 
 					  highlightClassName='textEditors'styled-components
 						highlightStyle={{color:'red',fontSize:'12px'}}
