@@ -20,6 +20,7 @@ class Converter extends Component {
             inputText:'',
             outputText:'',
             counter: 0,
+            numChar: 0,
 						isShowing: false,
 						isShowingHelp: false,
             input: '',
@@ -39,7 +40,8 @@ class Converter extends Component {
     this.setState({ 
       inputText: newText,
 			outputText: htmlText,
-			render: preview
+      render: preview,
+      numChar: e.target.value.length
     })
   }
 
@@ -85,7 +87,11 @@ class Converter extends Component {
 		this.setState({
 			outputText: res
 		})
-	}
+  }
+  
+  countChar = (event) => {
+    this.setState({ numChar: event.target.value.length });
+  }
 
   countWords() {
     
@@ -133,11 +139,12 @@ class Converter extends Component {
             searchField={this.searchField}
             input={this.state.input}
             counter={this.state.counter}
+            numChar={this.state.numChar}
           />
         </header>
 
         <div className="textContainer"> 
-          <textarea className="input-text" name="inputText" rows="30" cols="50" resize='none' value={this.state.inputText} onChange={this.handleInputChange}>    
+          <textarea className="input-text" name="inputText" rows="30" cols="50" resize='none' value={this.state.inputText} onChange={this.handleInputChange} >    
           </textarea>
       
           <div className='html-editor'>
