@@ -251,7 +251,7 @@ modal-wrapper {
 }
 
 .btn-cancel, .btn-continue {
-    background-color: none;
+    background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
@@ -261,7 +261,7 @@ modal-wrapper {
 }
 
 .btn-cancel {
-    background-color: none;
+    background-color: transparent;
     float: left;
 }
 
